@@ -1,4 +1,8 @@
-### esp-bin2elf
+# esp-bin2elf
+
+Updated version of esp-bin2elf including elffile2 fork.
+
+------------------------------------------------------------------------------------------------------------------------------
 
 Converts a flash dump from an esp8266 device into an ELF executable file for analysis and reverse engineering.
 
@@ -8,30 +12,38 @@ Tested in IDA Pro with the excellent [Xtensa processor plugin](https://github.co
 
 Once you have your ELF loaded, you can + should leverage the [rizzo IDA plugin](https://github.com/devttys0/ida) to identify common functions from the SDK and RTOS examples.
 
-### Requirements:
+------------------------------------------------------------------------------------------------------------------------------
 
-Install the 'elffile' python module before using this.
+Tested in Ghidra with the excellent [Tensilica Xtensa module for Ghidra](https://github.com/yath/ghidra-xtensa) from Sebastian Schmidt.
 
-### Usage:
+## Installation:
 
-```python
-import esp_bin2elf
-import flash_layout
+```
+$ git clone https://github.com/erd0spy/esp-bin2elf
+$ cd esp-bin2elf/elffile2
+$ pip2 install -r requirements.txt
+$ python2 setup.py install --user
+$ cd ..
+$ pip2 install -r requirements.txt
+```
 
-flash_layout = flash_layout.layout_without_ota_updates
-rom = esp_bin2elf.parse_rom('flashdump.bin', 'path/to/flashdump.bin', flash_layout)
-section_names = esp_bin2elf.name_sections(rom)
-elf = esp_bin2elf.convert_rom_to_elf(rom, section_names, 'flash_bin.elf')
+## Usage:
+
+```bash
+$ python2 bin2elf.py ./flash_dump.bin
 ```
 
 Then run `readelf -a flash_bin.elf` and make sure things look ok.
 
-### Feedback and issues:
+## Feedback and issues:
 
 Feel free to report an issue on github or contact me privately if you prefer.
 
-### Thanks:
+## Thanks:
 
 * Richard Burton for image format details: http://richard.burtons.org/2015/05/17/esp8266-boot-process/
 * Max Filippov (**jcmvbkbc**) for bootrom.bin: https://github.com/jcmvbkbc/esp-elf-rom
 * Fredrik Ahlberg (**themadinventor**) for the IDA plugin and esptool.
+
+* Joel Sandin (**jsandin**) for the esp-bin2elf: https://github.com/jsandin/esp-bin2elf
+* Sebastian Schmidt (**yath**) for the Tensilica Xtensa module for Ghidra: https://github.com/yath/ghidra-xtensa
