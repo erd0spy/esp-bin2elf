@@ -45,5 +45,7 @@ Feel free to report an issue on github or contact me privately if you prefer.
 * Max Filippov (**jcmvbkbc**) for bootrom.bin: https://github.com/jcmvbkbc/esp-elf-rom
 * Fredrik Ahlberg (**themadinventor**) for the IDA plugin and esptool.
 
+------------------------------------------------------------------------------------------------------------------------------
+
 * Joel Sandin (**jsandin**) for the esp-bin2elf: https://github.com/jsandin/esp-bin2elf
 * Sebastian Schmidt (**yath**) for the Tensilica Xtensa module for Ghidra: https://github.com/yath/ghidra-xtensa
