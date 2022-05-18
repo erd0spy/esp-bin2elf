@@ -1,6 +1,6 @@
 # esp-bin2elf
 
-Updated version of esp-bin2elf including elffile2 fork.
+Updated version of esp-bin2elf.
 
 ------------------------------------------------------------------------------------------------------------------------------
 
@@ -20,7 +20,9 @@ Tested in Ghidra with the excellent [Tensilica Xtensa module for Ghidra](https:/
 
 ```
 $ git clone https://github.com/erd0spy/esp-bin2elf
-$ cd esp-bin2elf/elffile2
+$ cd esp-bin2elf/
+$ git clone https://github.com/erd0spy/elffile2
+$ cd elffile2/
 $ pip2 install -r requirements.txt
 $ python2 setup.py install --user
 $ cd ..
