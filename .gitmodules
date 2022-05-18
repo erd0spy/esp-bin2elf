@@ -1,0 +1,3 @@
+[submodule "elffile2"]
+	path = elffile2
+	url = https://github.com/slorquet/elffile2
